@@ -1,56 +1,61 @@
 <mxfile host="app.diagrams.net">
-  <diagram name="Facturación">
+  <diagram name="Facturación 5 Procesos">
     <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10">
       <root>
         <mxCell id="0"/><mxCell id="1" parent="0"/>
 
         <!-- Inicio -->
-        <mxCell id="i" value="Inicio" style="ellipse;fillColor=#dae8fc;" vertex="1" parent="1">
-          <mxGeometry x="300" y="40" width="140" height="70" as="geometry"/>
+        <mxCell id="inicio" value="Inicio" style="ellipse;fillColor=#dae8fc;" vertex="1" parent="1">
+          <mxGeometry x="320" y="40" width="160" height="70"/>
         </mxCell>
 
-        <!-- Procesos -->
+        <!-- 5 Procesos -->
         <mxCell id="p1" value="Recibir datos de venta" style="rounded=0;fillColor=#d5e8d4;" vertex="1" parent="1">
-          <mxGeometry x="260" y="150" width="220" height="70" as="geometry"/>
+          <mxGeometry x="280" y="140" width="240" height="70"/>
         </mxCell>
 
         <mxCell id="p2" value="Verificar datos del cliente" style="rounded=0;fillColor=#d5e8d4;" vertex="1" parent="1">
-          <mxGeometry x="260" y="260" width="220" height="70" as="geometry"/>
+          <mxGeometry x="280" y="240" width="240" height="70"/>
         </mxCell>
 
-        <mxCell id="p3" value="Generar factura" style="rounded=0;fillColor=#d5e8d4;" vertex="1" parent="1">
-          <mxGeometry x="260" y="370" width="220" height="70" as="geometry"/>
+        <mxCell id="p3" value="Validar información de la venta" style="rounded=0;fillColor=#d5e8d4;" vertex="1" parent="1">
+          <mxGeometry x="280" y="340" width="240" height="70"/>
+        </mxCell>
+
+        <mxCell id="p4" value="Generar factura" style="rounded=0;fillColor=#d5e8d4;" vertex="1" parent="1">
+          <mxGeometry x="280" y="440" width="240" height="70"/>
+        </mxCell>
+
+        <mxCell id="p5" value="Registrar factura en sistema" style="rounded=0;fillColor=#d5e8d4;" vertex="1" parent="1">
+          <mxGeometry x="280" y="540" width="240" height="70"/>
         </mxCell>
 
         <!-- Decisión -->
-        <mxCell id="d" value="¿Factura correcta?" style="rhombus;fillColor=#fff2cc;" vertex="1" parent="1">
-          <mxGeometry x="260" y="490" width="220" height="90" as="geometry"/>
+        <mxCell id="decision" value="¿Factura correcta?" style="rhombus;fillColor=#fff2cc;" vertex="1" parent="1">
+          <mxGeometry x="280" y="650" width="240" height="100"/>
         </mxCell>
 
-        <!-- SI -->
-        <mxCell id="p4" value="Enviar factura al cliente" style="rounded=0;fillColor=#d5e8d4;" vertex="1" parent="1">
-          <mxGeometry x="260" y="620" width="220" height="70" as="geometry"/>
-        </mxCell>
-
-        <!-- NO -->
-        <mxCell id="p5" value="Corregir errores" style="rounded=0;fillColor=#f8cecc;" vertex="1" parent="1">
-          <mxGeometry x="550" y="500" width="220" height="70" as="geometry"/>
+        <!-- Corrección -->
+        <mxCell id="error" value="Corregir datos" style="rounded=0;fillColor=#f8cecc;" vertex="1" parent="1">
+          <mxGeometry x="580" y="660" width="220" height="70"/>
         </mxCell>
 
         <!-- Fin -->
-        <mxCell id="f" value="Fin" style="ellipse;fillColor=#f8cecc;" vertex="1" parent="1">
-          <mxGeometry x="300" y="740" width="140" height="70" as="geometry"/>
+        <mxCell id="fin" value="Fin" style="ellipse;fillColor=#f8cecc;" vertex="1" parent="1">
+          <mxGeometry x="330" y="780" width="140" height="70"/>
         </mxCell>
 
         <!-- Conexiones -->
-        <mxCell edge="1" parent="1" source="i" target="p1" style="endArrow=block"/>
+        <mxCell edge="1" parent="1" source="inicio" target="p1" style="endArrow=block"/>
         <mxCell edge="1" parent="1" source="p1" target="p2" style="endArrow=block"/>
         <mxCell edge="1" parent="1" source="p2" target="p3" style="endArrow=block"/>
-        <mxCell edge="1" parent="1" source="p3" target="d" style="endArrow=block"/>
-        <mxCell edge="1" parent="1" source="d" target="p4" value="Sí" style="endArrow=block"/>
-        <mxCell edge="1" parent="1" source="d" target="p5" value="No" style="endArrow=block"/>
-        <mxCell edge="1" parent="1" source="p4" target="f" style="endArrow=block"/>
-        <mxCell edge="1" parent="1" source="p5" target="p2" style="endArrow=block"/>
+        <mxCell edge="1" parent="1" source="p3" target="p4" style="endArrow=block"/>
+        <mxCell edge="1" parent="1" source="p4" target="p5" style="endArrow=block"/>
+        <mxCell edge="1" parent="1" source="p5" target="decision" style="endArrow=block"/>
+
+        <mxCell edge="1" parent="1" source="decision" target="fin" value="Sí" style="endArrow=block"/>
+        <mxCell edge="1" parent="1" source="decision" target="error" value="No" style="endArrow=block"/>
+        <mxCell edge="1" parent="1" source="error" target="p2" style="endArrow=block"/>
 
       </root>
     </mxGraphModel>
