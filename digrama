@@ -1,47 +1,85 @@
 <mxfile host="app.diagrams.net">
-  <diagram name="Producción">
-    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10">
+  <diagram name="Flujograma Ensamble">
+    <mxGraphModel dx="800" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100">
       <root>
-        <mxCell id="0"/><mxCell id="1" parent="0"/>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
 
         <!-- Inicio -->
-        <mxCell id="inicio" value="Inicio" style="ellipse;whiteSpace=wrap;html=1;strokeColor=#ffffff;fillColor=none;fontColor=#ffffff;" vertex="1" parent="1">
-          <mxGeometry x="320" y="40" width="160" height="60"/>
+        <mxCell id="2" value="Inicio" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="20" width="120" height="60" as="geometry"/>
         </mxCell>
 
-        <!-- Procesos -->
-        <mxCell id="p1" value="Recepción de materia prima" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#ffffff;fillColor=none;fontColor=#ffffff;" vertex="1" parent="1">
-          <mxGeometry x="260" y="120" width="280" height="70"/>
+        <!-- Recepción de piezas -->
+        <mxCell id="3" value="Recepción de piezas cortadas" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="260" y="120" width="200" height="60" as="geometry"/>
         </mxCell>
 
-        <mxCell id="p2" value="Corte de telas" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#ffffff;fillColor=none;fontColor=#ffffff;" vertex="1" parent="1">
-          <mxGeometry x="260" y="210" width="280" height="70"/>
+        <!-- Asignación -->
+        <mxCell id="4" value="Asignación a operarios" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="260" y="220" width="200" height="60" as="geometry"/>
         </mxCell>
 
-        <mxCell id="p3" value="Confección de prendas" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#ffffff;fillColor=none;fontColor=#ffffff;" vertex="1" parent="1">
-          <mxGeometry x="260" y="300" width="280" height="70"/>
+        <!-- Ensamble -->
+        <mxCell id="5" value="Proceso de costura / ensamble" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="260" y="320" width="200" height="60" as="geometry"/>
         </mxCell>
 
-        <mxCell id="p4" value="Ensamble y acabado" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#ffffff;fillColor=none;fontColor=#ffffff;" vertex="1" parent="1">
-          <mxGeometry x="260" y="390" width="280" height="70"/>
+        <!-- Revisión -->
+        <mxCell id="6" value="Revisión parcial" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="260" y="420" width="200" height="60" as="geometry"/>
         </mxCell>
 
-        <mxCell id="p5" value="Empaque del producto" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#ffffff;fillColor=none;fontColor=#ffffff;" vertex="1" parent="1">
-          <mxGeometry x="260" y="480" width="280" height="70"/>
+        <!-- Decisión -->
+        <mxCell id="7" value="¿Cumple especificaciones?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="520" width="180" height="100" as="geometry"/>
         </mxCell>
 
         <!-- Fin -->
-        <mxCell id="fin" value="Producto terminado" style="ellipse;whiteSpace=wrap;html=1;strokeColor=#ffffff;fillColor=none;fontColor=#ffffff;" vertex="1" parent="1">
-          <mxGeometry x="320" y="580" width="160" height="60"/>
+        <mxCell id="8" value="Fin" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="680" width="120" height="60" as="geometry"/>
         </mxCell>
 
-        <!-- Conexiones -->
-        <mxCell edge="1" parent="1" source="inicio" target="p1" style="endArrow=block;strokeColor=#ffffff;"/>
-        <mxCell edge="1" parent="1" source="p1" target="p2" style="endArrow=block;strokeColor=#ffffff;"/>
-        <mxCell edge="1" parent="1" source="p2" target="p3" style="endArrow=block;strokeColor=#ffffff;"/>
-        <mxCell edge="1" parent="1" source="p3" target="p4" style="endArrow=block;strokeColor=#ffffff;"/>
-        <mxCell edge="1" parent="1" source="p4" target="p5" style="endArrow=block;strokeColor=#ffffff;"/>
-        <mxCell edge="1" parent="1" source="p5" target="fin" style="endArrow=block;strokeColor=#ffffff;"/>
+        <!-- Corrección -->
+        <mxCell id="9" value="Corrección" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="540" width="180" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Conectores -->
+        <mxCell id="10" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;" edge="1" parent="1" source="2" target="3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="11" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;" edge="1" parent="1" source="3" target="4">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="12" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;" edge="1" parent="1" source="4" target="5">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="13" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;" edge="1" parent="1" source="5" target="6">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="14" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;" edge="1" parent="1" source="6" target="7">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Sí -->
+        <mxCell id="15" value="Sí" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;" edge="1" parent="1" source="7" target="8">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- No -->
+        <mxCell id="16" value="No" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;" edge="1" parent="1" source="7" target="9">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Regreso -->
+        <mxCell id="17" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;" edge="1" parent="1" source="9" target="5">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
 
       </root>
     </mxGraphModel>
